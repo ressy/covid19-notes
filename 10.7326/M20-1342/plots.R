@@ -5,7 +5,10 @@ petri_plot <- function(data) {
   plot(
     c(), c(),
     xlim = c(1, ncol(data)),
-    ylim = c(0, max(petri_data, na.rm = TRUE)), xaxt='n', xlab="Group")
+    ylim = c(0, max(petri_data, na.rm = TRUE)),
+    xaxt = "n",
+    xlab = "Group",
+    ylab = "Viral Load (log copies/mL)")
   axis(side = 1, at = 1:4, labels = c("No Mask 1", "Surgical", "Cotton", "No Mask 2"))
   legend(x = "bottomright", legend = colnames(petri_data), col=1:ncol(petri_data), pch=19)
   for (idx in 1:ncol(petri_data)) {
