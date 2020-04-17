@@ -19,6 +19,7 @@ petri_plot <- function(data) {
 
 mask_plot <- function(data) {
   mask_data <- data[c("SO", "CO", "SI", "CI"), ]
+  rownames(mask_data) <- c("SurgicalOuter", "ClothOuter", "SurgicalInner", "ClothInner")
   pheatmap::pheatmap(
     mat = mask_data,
     cluster_rows = FALSE,
